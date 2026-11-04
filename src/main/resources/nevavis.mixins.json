@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "nevavis.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "BackgroundRendererMixin",
+    "CameraMixin",
+    "CapeMixin",
+    "ClientWorldMixin",
+    "InGameHudMixin",
+    "GameRendererMixin",
+    "PlayerEntityMixin",
+    "PlayerListHudMixin",
+    "SoundSystemMixin",
+    "SwingMixin",
+    "SwingSpeedMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}
