@@ -3,9 +3,7 @@ package nevavis.render;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.text.Style;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import nevavis.config.NevaVisConfig;
 import nevavis.config.ConfigManager;
 import nevavis.themes.ThemeManager;
@@ -222,18 +220,8 @@ public final class Gfx {
 		return MinecraftClient.getInstance().textRenderer;
 	}
 
-	private static final Style UI_STYLE = Style.EMPTY.withFont(Identifier.of("nevavis", "ui"));
-
-	private static boolean pretty() {
-		return cfg().prettyFont;
-	}
-
-	private static Text styled(String s) {
-		return Text.literal(s).setStyle(UI_STYLE);
-	}
-
 	public static int width(String s) {
-		return pretty() ? tr().getWidth(styled(s)) : tr().getWidth(s);
+		return tr().getWidth(s);
 	}
 
 	public static void text(DrawContext c, String s, int x, int y, int color) {
@@ -245,11 +233,7 @@ public final class Gfx {
 		if ((m >>> 24) < 8 || s == null || s.isEmpty()) {
 			return; // альфа < 8 vanilla рисует как непрозрачный
 		}
-		if (pretty()) {
-			c.drawText(tr(), styled(s), x, y - 1, m, shadow);
-		} else {
-			c.drawText(tr(), s, x, y, m, shadow);
-		}
+		c.drawText(tr(), s, x, y, m, shadow);
 	}
 
 	public static void centered(DrawContext c, String s, int cx, int y, int color) {

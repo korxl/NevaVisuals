@@ -40,7 +40,6 @@ public final class NevaVisConfig {
 	public boolean presenceEnabled = true;
 	public String presenceUrl = "";
 	public boolean showBadge = true;
-	public boolean prettyFont = true;
 	public boolean showCape = true;
 
 	// Текст песни в небе

@@ -45,7 +45,6 @@ public final class SettingsPage extends Page {
 		interfaceItems.add(new Slider("HUD Scale", 0.5f, 2f, 0.05f, () -> cfg.hudScale, v -> cfg.hudScale = v, "%.2fx"));
 		interfaceItems.add(new Slider("Notification time", 1f, 8f, 0.5f, () -> cfg.notificationSeconds, v -> cfg.notificationSeconds = v, "%.1f s"));
 		interfaceItems.add(new Slider("Music volume", 0f, 1f, 0.05f, () -> MusicPlayer.get().volume(), v -> MusicPlayer.get().setVolume(v), "%.2f"));
-		interfaceItems.add(new Toggle("Smooth UI font (Inter)", () -> cfg.prettyFont, v -> cfg.prettyFont = v));
 		interfaceItems.add(new Toggle("GUI animations", () -> cfg.guiAnimations, v -> cfg.guiAnimations = v));
 		interfaceItems.add(new Toggle("Menu glow effects", () -> cfg.glowEnabled, v -> cfg.glowEnabled = v));
 		interfaceItems.add(new Toggle("Low performance mode", () -> cfg.lowPerformance, v -> cfg.lowPerformance = v));
